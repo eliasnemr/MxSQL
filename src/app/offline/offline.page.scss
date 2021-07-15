@@ -1,0 +1,10 @@
+p {
+  color: var(--ion-color-secondary);
+  opacity: 0.7;
+  a {
+    cursor: pointer;
+  }
+  a:hover {
+    color: #fff;
+  }
+}

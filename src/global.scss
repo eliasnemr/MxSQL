@@ -24,3 +24,56 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+/* Font-Family */
+@font-face {
+  font-family: 'monotype';
+  font-style: normal;
+  font-weight: normal;
+  src: url('./fonts/monotype.ttf');
+}
+@font-face {
+  font-family: 'manrope-regular';
+  src: url('./fonts/manrope-regular.otf');
+}
+@font-face {
+  font-family: 'manrope-bold';
+  src: url('./fonts/manrope-bold.otf');
+}
+@font-face {
+  font-family: 'manrope-light';
+  src: url('./fonts/manrope-light.otf');
+}
+@font-face {
+  font-family: 'manrope-semibold';
+  src: url('./fonts/manrope-semibold.otf');
+}
+@font-face {
+  font-family: 'manrope-medium';
+  src: url('./fonts/manrope-medium.otf');
+}
+body, html {
+  font-family: manrope-regular;
+}
+
+::-webkit-scrollbar-track
+{
+-webkit-box-shadow: inset 0 0 6px linear-gradient(to bottom, #697597 0%, #5260ff 100%) !important;
+border-radius: 10px!important;
+background-color: #697597!important;
+opacity: 0.7;
+}
+
+::-webkit-scrollbar
+{
+width: 10px!important;
+background-color: linear-gradient(to bottom, #697597 0%, #5260ff 100%)!important;
+}
+
+::-webkit-scrollbar-thumb
+{
+border-radius: 10px!important;
+-webkit-box-shadow: inset 0 0 3px rgba(0,0,0,.3)!important;
+background-color: #EEF3F6!important;
+opacity: 0.3;
+}

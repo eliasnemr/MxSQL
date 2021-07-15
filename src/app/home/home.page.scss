@@ -1,27 +1,67 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+ion-textarea {
+  font-family: 'monotype' !important; 
+  background-color: rgba(#FAFAF0, 0.1);
+  --color: var(--ion-color-tertiary);
+  --border-radius: 15px;
+  --padding-end: 15px;
+}
+ion-button#submit {
+  text-transform: none;
+  font-family: manrope-bold;
+}
+form#qry {
+  ion-card-content {
+    ion-card-title {
+      h6#error {
+        color: var(--ion-color-danger);
+      }
+      h6#res {
+        color: var(--ion-color-success);
+      }
+    }
+    h6 {
+      font-family: manrope-bold;
+    }
+  }
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+ion-title {
+  div.brand-wrapper {
+    img {
+      width: 120px;
+      height: 60px;
+      padding-right: 5px;
+    }
+    h6 {
+      font-family: manrope-light;
+      font-size: 0.9rem;
+    }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+ion-grid.myTable {
+  
 }
-
-#container a {
-  text-decoration: none;
+.myTable-header {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  background-color: var(--ion-color-tertiary);
+  ion-col {
+    text-transform: none;
+    color: #fff;
+    font-family: manrope-bold;
+  }
+}
+.myTable-body {
+  
+}
+.myTable-row {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  border-bottom: 1px solid #FaFaf0;
 }

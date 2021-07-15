@@ -1,7 +1,12 @@
-<ion-header [translucent]="true">
+<ion-header class="ion-no-border" [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      <div class="brand-wrapper">
+        <img src="assets/minima-logo-landscape-dark.svg" />
+        <h6>
+          MxSQL Tester
+        </h6>
+      </div>
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +14,48 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">MxSQL</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-card>
+    <form [formGroup]="queryForm" (ngSubmit)="runQuery(query.value)">
+      <ion-card-content>
+        <ion-textarea
+        #queryTextArea 
+        wrap="soft" 
+        rows="10" 
+        cols="5" 
+        placeholder="Enter your query"
+        formControlName="query"></ion-textarea>
+      </ion-card-content>
+      <ion-card-subtitle>
+        <ion-button id="submit" type="submit" expand="full" color="tertiary">Run Query</ion-button>
+      </ion-card-subtitle>
+    </form>
+  </ion-card>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-card *ngIf="queryResponse?.status">
+    <form id="qry">
+      <ion-card-content>
+        <ion-card-title>
+          <h6 id="error" *ngIf="queryResponse?.error">ERROR</h6>
+          <h6 id="res" *ngIf="!queryResponse?.error">Response</h6>
+        </ion-card-title>
+        <h6 *ngIf="queryResponse?.message">{{ queryResponse?.message}}</h6>
+      </ion-card-content>
+
+      <ion-grid class=" myTable" *ngIf="queryResponse?.json && queryResponse?.json.length > 0">
+        <ion-row class="myTable-header">
+          <ion-col *ngFor="let r of queryResponse?.rows[0] | keyvalue">
+            {{ r.key }}
+          </ion-col>
+        </ion-row>
+        <ion-row class="myTable-body" *ngFor="let data of queryResponse?.rows">
+          <ion-col size="2" class="myTable-row" *ngFor="let r of data | keyvalue">
+            {{ r.value }}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
+  </ion-card>
 </ion-content>

@@ -1,0 +1,56 @@
+ion-textarea {
+  font-family: "monotype" !important;
+  background-color: rgba(250, 250, 240, 0.1);
+  --color: var(--ion-color-tertiary);
+  --border-radius: 15px;
+  --padding-end: 15px;
+}
+
+ion-button#submit {
+  text-transform: none;
+  font-family: manrope-bold;
+}
+
+form#qry ion-card-content ion-card-title h6#error {
+  color: var(--ion-color-danger);
+}
+form#qry ion-card-content ion-card-title h6#res {
+  color: var(--ion-color-success);
+}
+form#qry ion-card-content h6 {
+  font-family: manrope-bold;
+}
+
+ion-title div.brand-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+ion-title div.brand-wrapper img {
+  width: 120px;
+  height: 60px;
+  padding-right: 5px;
+}
+ion-title div.brand-wrapper h6 {
+  font-family: manrope-light;
+  font-size: 0.9rem;
+}
+
+.myTable-header {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  background-color: var(--ion-color-tertiary);
+}
+.myTable-header ion-col {
+  text-transform: none;
+  color: #fff;
+  font-family: manrope-bold;
+}
+
+.myTable-row {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  border-bottom: 1px solid #FaFaf0;
+}
